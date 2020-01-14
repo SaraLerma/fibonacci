@@ -1,0 +1,49 @@
+
+section.main-component{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+.elementsRow{
+    flex-direction:row;
+    margin-right: 10px;
+}
+
+input{
+    width: 30%;
+    margin-right: 5%;
+}
+
+.fit{
+    display: inline;
+    flex-direction: column;
+    align-content: center;
+    box-sizing: border-box;
+}
+
+.btn{
+    align-items: center;
+    font-size: 15px;
+    border-radius:5px;
+    background: rgb(143, 142, 142);
+    background-color: rgb(143, 142, 142);
+}
+
+.btn:active{
+    background-color: rgb(88, 87, 87);
+}
+
+.hide{
+    visibility: hidden;
+}
+
+@media screen and (max-width: 450px) {
+    .fit{
+        resize: horizontal;
+      margin-top: 0;
+    }
+  }
+

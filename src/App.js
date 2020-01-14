@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./assets/images/spiral_Fibonacci.png";
+import formula from "./assets/images/formula.gif";
+import "./assets/css/App.css"; // react nos permite importar asi el css
+//importo componentes
+import MainComponent from "./components/MainComponent";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Fibonacci calculator</h1>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Fibonacci sequence, such that each number is the sum <br /> of the two
+          preceding ones, starting from 0 and 1.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src={formula} className="App-formula" alt="formula" />
       </header>
+      <section>
+        <MainComponent />
+      </section>
     </div>
   );
 }
