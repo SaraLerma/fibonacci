@@ -11,8 +11,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={coverwallet} className="App-logoCoverwallet" alt="Coverwallet" />
-        <div className="Intro">
-          <h1>Fibonacci calculator</h1>
+        <a className="fa fa-github btnGit" href="https://github.com/saralerma"  title="Fork me on github"><b> GitHub</b></a>
+      </header>
+     
+      <section className="Intro">
+          <h1 className="Title-intro">Fibonacci calculator</h1>
           <img src={spiral} className="App-spiral" alt="spiral" />
           
           <p className="Description">
@@ -22,8 +25,8 @@ function App() {
             </i>
           </p>
           <img src={formula} className="App-formula" alt="formula" />
-        </div>
-      </header>
+      </section>
+
       <section>
         <MainComponent />
       </section>
