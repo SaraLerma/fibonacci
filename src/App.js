@@ -4,7 +4,7 @@ import coverwallet from "./assets/images/coverwallet-logo.svg";
 import formula from "./assets/images/formula.png";
 import "./assets/css/App.css"; 
 
-import MainComponent from "./components/mainComponent";
+import MainComponent from "./components/MainComponent";
 
 function App() {
   return (

@@ -1,10 +1,7 @@
 import { fibonacci } from "../algorithms/fibonacci";
-//const fibonacci = require("../algorithms/fibonacci");
-console.log(fibonacci);
 
 test("returns 0 when input is 0", () => {
     const result = fibonacci(0);
-    expect(fibonacci).toBeDefined();
     expect(result).toBe(0);
 });
 test("returns 1 when input is 1", () => {

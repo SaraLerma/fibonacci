@@ -5,49 +5,65 @@ import "../assets/css/component.css";
 export default class MainComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = { number: null, result: null, error: false };
+    this.state = { 
+      number: 0, 
+      result: { input: 0, output: -1}, 
+      error: false 
+    };
     this.inputHandler = this.inputHandler.bind(this);
     this.buttonClicked = this.buttonClicked.bind(this);
+    this.onKeyPress = this.onKeyPress.bind(this);
   }
 
   inputHandler(event) {
-    this.setState({ number: event.target.value });
+    this.setState({ ...this.state, number: event.target.value });
   }
 
   buttonClicked(){
     const numInput = this.state.number;
-    if (numInput < 0) {
-      this.setState({ error: true });
+    if (numInput < 0 || numInput > 1000) {
+      this.setState({ ...this.state, error: true, result: {input: 0, output: -1}});
     } else {
       const output = fibonacci(numInput);
-      this.setState({ result: output, error: false });
+      this.setState({ ...this.state, result: {input: numInput, output: output}, error: false });
     }
   }
 
-  render(){
+  onKeyPress(event) {
+    if(event.key === "Enter") {
+      this.buttonClicked()
+    }
+  }
+
+  render(){    
     return(
       <section className="main-component">
         <div className="elementsRow">
           <input
             className="inputText"
             type="number"
+            aria-label="fib-input"            
             placeholder="Enter a number"
-            aria-label="fib-input"
             onChange={this.inputHandler}
-            onKeyPress={this.buttonClicked}
-          ></input>
-          <button className="btn" onClick={this.buttonClicked} >
+            onKeyPress={this.onKeyPress}
+          />
+          <button 
+            id="btnCalculate" 
+            className="btn" 
+            onClick={this.buttonClicked} 
+            aria-label="calculate">
             <b>Calculate</b>
           </button>
         </div>
 
-        {this.state.error ? <p>ERROR: enter a positive number</p> : ""}
+        {this.state.error ? <p>ERROR: Number must be positive between 0 and 1000</p> : ""}
 
-        <div className={this.state.result == null || this.state.number=="" ? "hide" : ""}>
-          <p>
-            Fibonacci({this.state.number}) = {this.state.result}
-          </p>
-        </div>
+        {this.state.result.output !== -1 ?            
+            <p aria-label="result">
+              Fibonacci({this.state.result.input}) = {this.state.result.output}
+            </p>          
+          : ""
+        }        
       </section>
     );
   }

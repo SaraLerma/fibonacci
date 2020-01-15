@@ -14,24 +14,27 @@ test("check is part of the description", () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-/*test("check that works Github anchor", () => {
-  const { getByText } = render(<App />);
-  const gitBtn = getByText(/GitHub/i);
-  fireEvent.click(gitBtn); 
-});*/
+test("when input is negative then display error", () => {
+  const { queryByText, getByLabelText } = render(<App />);
 
-test("execute fibonacci", () => {
-  const { getByText, getByLabelText } = render(<App />);
-  //text -1 in the input
-  const input = getByLabelText('fib-input');
-  fireEvent.change(input, { target: { value: '-1' } });//lanzar un evento
-
-  //button click
-  const button = getByText(/Calculate/i);
+  const input = getByLabelText('fib-input')
+  fireEvent.change(input, { target: { value: '-1' } })
+  
+  const button = getByLabelText(/calculate/i);
   fireEvent.click(button);  
-
-  //display error text?
-  const error = getByText(/ERROR: Enter a positive number/i);
-  expect(error).toBeInTheDocument();
+  
+  const error = queryByText(/ERROR: Number must be positive between 0 and 1000/i)
+  expect(error).toBeInTheDocument()
 });
 
+test("not displays error when enter in the app", () => {
+  const { queryByText } = render(<App />); 
+  const error = queryByText(/ERROR: Number must be positive between 0 and 1000/i);
+  expect(error).not.toBeInTheDocument();
+});
+
+test("not displays result when enter in the app", () => {
+  const { queryByLabelText } = render(<App />); 
+  const result = queryByLabelText(/result/i);
+  expect(result).not.toBeInTheDocument();
+});

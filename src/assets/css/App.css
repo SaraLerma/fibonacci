@@ -41,11 +41,12 @@ body{
 }
 
 .App-spiral {
-  height: 200px;
+  height: 170px;
 }
 
 .App-formula{
   height: 75px;
+  margin-bottom: -20px;
 }
 
 .Description{
