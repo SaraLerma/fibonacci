@@ -20,7 +20,7 @@ function App() {
           
           <p className="Description">
             <i>
-            Fibonacci sequence is calculated in such a way that each <br />
+            Fibonacci sequence is calculated in such a way that each 
             number is the sum of the previous two, starting with 0 and 1.
             </i>
           </p>

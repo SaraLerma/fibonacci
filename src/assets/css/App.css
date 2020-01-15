@@ -4,7 +4,6 @@
   align-items: center;
 }
 .App-header{
-  width: 100%;
   padding: 2%;
   background-color: #03a9f4;
 }
@@ -17,7 +16,7 @@
 .btnGit{
   background-color: white;
   text-decoration: none;
-  position: fixed;
+  position: absolute;
   top: 45px;
   right: 30px;
   width: 70px;
@@ -52,13 +51,15 @@ body{
 .Description{
   align-content: center ;
   font-size: 20px;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 @media screen and (max-width: 767px){
   .Description {
       font-size: auto;
-      margin-left: 10%;
-      margin-right: 10%;
+      margin-left: 20%;
+      margin-right: 20%;
   }
   .App{
     align-items: center;
@@ -74,19 +75,15 @@ body{
     left: 20px;
   }
   .btnGit{
-    top: 25px;
+    top: 10px;
     right: 45px;
     width: 60px;
     font-size: 12px;
   }
+
 }
 
-@media screen and (max-width: 767px){
-  .Description {
-      font-size: auto;
-      margin-left: 10%;
-      margin-right: 10%;
-  }
+@media screen and (max-width: 1000px){
   .App{
     align-items: center;
   }
@@ -104,6 +101,26 @@ body{
     width: 60px;
     font-size: 12px;
   }
+}
+
+@media screen and (max-width: 500px){
+  .Description {
+    font-size: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+  .btnGit{
+    top: 15px;
+    right: 20px;
+    width: 60px;
+    font-size: 12px;
+  }
+  .App-logoCoverwallet{
+    top: 5px;
+    left: 5px;
+  }
+
 }
 
 /*

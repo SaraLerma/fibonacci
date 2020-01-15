@@ -32,17 +32,18 @@ export default class MainComponent extends Component {
             className="inputText"
             type="number"
             placeholder="Enter a number"
+            aria-label="fib-input"
             onChange={this.inputHandler}
             onKeyPress={this.buttonClicked}
           ></input>
-          <button id = "btnCalculate" className="btn" onClick={this.buttonClicked} >
+          <button className="btn" onClick={this.buttonClicked} >
             <b>Calculate</b>
           </button>
         </div>
 
         {this.state.error ? <p>ERROR: enter a positive number</p> : ""}
 
-        <div className={this.state.result == null || this.state.number==null ? "hide" : ""}>
+        <div className={this.state.result == null || this.state.number=="" ? "hide" : ""}>
           <p>
             Fibonacci({this.state.number}) = {this.state.result}
           </p>
