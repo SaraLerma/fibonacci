@@ -7,4 +7,3 @@ test("renders learn react link", () => {
   const linkElement = getByText(/Fibonacci calculator/i);
   expect(linkElement).toBeInTheDocument();
 });
-
