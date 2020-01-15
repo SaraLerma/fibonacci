@@ -2,7 +2,7 @@
   "name": "fibonacci",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://saralerma.github.io/fibonacci",
+  "homepage": "http://saralerma.github.io/fibonacci",
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
@@ -44,23 +44,22 @@
       "last 1 safari version"
     ]
   },
-  "husky": {
-      "hooks": {
-        "pre-commit": "lint-staged"
-      }
-    },
-  "lint-staged": {
-      "*/.{js,json,md}": [
-        "prettier --write",
-        "git add"
-      ],
-      "*/.{js}": [
-        "eslint --fix",
-        "git add"
-      ]
-    
-  },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*/.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*/.{js}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
