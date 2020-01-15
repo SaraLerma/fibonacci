@@ -49,17 +49,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run format && git add ."
     }
-  },
-  "lint-staged": {
-    "*/.{js,json,md}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*/.{js}": [
-      "eslint --fix",
-      "git add"
-    ]
   }
 }
